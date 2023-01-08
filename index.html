@@ -51,15 +51,16 @@
   <script>
     function updateTimer() {
       past = Date.parse("2023-01-07 00:00:01");
+      days_to_count = "730"
       pastY = new Date(past).toLocaleString("en-US", { year: "numeric" });
       pastM = new Date(past).toLocaleString("sr-RS", { month: "long" });
       pastD = new Date(past).toLocaleString("sr-RS", { day: "numeric" });
       now = new Date();
       diff = now - past;
       days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      remains = Math.floor(730 - days);
+      remains = Math.floor(days_to_count - days);
       document.getElementById("timer")
-        .innerHTML = 'СТАРТ → ' + pastD + '. ' + pastM + ' ' + pastY + '<hr style="color: #2d2d2d;">' + 'Мршављење дан → ' + days + '<br> Oстало још дана → ' + remains
+        .innerHTML = '<p style="color: #fff;">СТАРТ → ' + pastD + '. ' + pastM + ' ' + pastY + '</p><hr style="color: #2d2d2d;">' + 'Мршављење дан → ' + days + '<br> Oстало још дана → ' + remains + '/' + days_to_count
     }
     updateTimer()
     // setInterval('updateTimer()', 1000);

@@ -57,7 +57,7 @@
       now = new Date();
       diff = now - past;
       days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      remains = Math.floor(360 - days);
+      remains = Math.floor(730 - days);
       document.getElementById("timer")
         .innerHTML = 'СТАРТ → ' + pastD + '. ' + pastM + ' ' + pastY + '<hr style="color: #2d2d2d;">' + 'Мршављење дан → ' + days + '<br> Oстало још дана → ' + remains
     }

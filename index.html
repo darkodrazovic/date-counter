@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<body style="background-color:#0f0f0f;"></body>
+<meta charset="UTF-8">
+
+<head>
+  <title>Мршављење</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+  <style>
+    body {
+      font-family: "Ubuntu";
+      margin-top: 1%;
+      color: #b6b6b6;
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+      margin: 1%;
+    }
+
+    a {
+      text-decoration: none !important;
+      line-height: 100%;
+      color: #626262;
+    }
+
+    #timer {
+      font-size: 150%;
+      font-weight: bold;
+    }
+
+    hr {
+      border: 1px dashed;
+      width: 60%;
+    }
+
+    notice {
+      font-size: 150%;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <notice>Стартна килажа 213кг, жељена килажа 120кг, скинути 93кг
+    <hr style="color: #2d2d2d;">
+  </notice>
+  <p id="timer"></p>
+  <script>
+    function updateTimer() {
+      past = Date.parse("2023-01-07 00:00:01");
+      pastY = new Date(past).toLocaleString("en-US", { year: "numeric" });
+      pastM = new Date(past).toLocaleString("sr-RS", { month: "long" });
+      pastD = new Date(past).toLocaleString("sr-RS", { day: "numeric" });
+      now = new Date();
+      diff = now - past;
+      days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      remains = Math.floor(360 - days);
+      document.getElementById("timer")
+        .innerHTML = 'СТАРТ → ' + pastD + '. ' + pastM + ' ' + pastY + '<hr style="color: #2d2d2d;">' + 'Мршављење дан → ' + days + '<br> Oстало још дана → ' + remains
+    }
+    updateTimer()
+    // setInterval('updateTimer()', 1000);
+  </script>
+</body>
+
+</html>
